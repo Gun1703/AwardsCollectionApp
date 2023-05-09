@@ -42,10 +42,10 @@ struct MainView: View {
 
 extension AnyTransition {
     static var leadingSlide: AnyTransition {
-        let insertion = AnyTransition.move(edge: .leading)
-            .combined(with: .scale)
-        let removal = AnyTransition.move(edge: .trailing)
-            .combined(with: .scale)
+        let insertion = AnyTransition.move(edge: .top)
+            .combined(with: .slide)
+        let removal = AnyTransition.move(edge: .bottom)
+            .combined(with: .offset(CGSize(width: 200, height: 0)))
         
         return .asymmetric(insertion: insertion, removal: removal)
     }
